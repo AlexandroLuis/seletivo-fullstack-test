@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2>Olá {{ loggedInUser }}, edite seu perfil!</h2>
+  
+  <form (ngSubmit)="saveEditing()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="mail" name="mail" required [(ngModel)]="userDetails.mail">
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Nova Senha</label>
+      <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="userDetails.password">
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEditing()">Cancelar</button>
+  </form>
+</div>
